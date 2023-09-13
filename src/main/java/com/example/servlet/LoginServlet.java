@@ -27,9 +27,9 @@ public class LoginServlet extends HttpServlet {
         String password = req.getParameter("password");
         if (!password.isEmpty() && (admin.equals(req.getParameter("login")) || user.equals(req.getParameter("login")))) {
             HttpSession httpSession = req.getSession();
-            httpSession.setAttribute("user", admin);
+            httpSession.setAttribute("user", user);
             resp.sendRedirect("/user/hello.jsp");
-        }else {
+        } else {
             resp.sendRedirect("/login.jsp");
         }
     }
